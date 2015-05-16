@@ -93,7 +93,7 @@ $_SESSION['captcha'] = simple_php_captcha();
                 </div>
                 <div class="col-md-4 column">
                     <div style="margin:auto">
-                                <img class="featurette-image text-center img-rounded img-responsive" src="/img/profile.jpg">
+                                <img class="featurette-image text-center img-rounded img-responsive" src="img/team.png">
                     </div>
                 </div>
                 <div class="col-md-4 column">
