@@ -22,6 +22,12 @@ a {
     text-decoration: none !important;
 }
 
+
+.contact-container {
+    width: 60%;
+    text-align: right;
+}
+
 .post-error {
   color: #a94442;
   margin-bottom: 13px;
@@ -35,7 +41,9 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
     outline: 0 none!important;
 }
 
-.top-buffer { margin-top:40px; }
+.top-buffer { margin-bottom:40px; }
+
+.featurette {padding-top: 80px; padding-bottom: 40px;}
 
 blockquote {
     text-align:left;
