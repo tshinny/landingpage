@@ -8,7 +8,7 @@ session_start();
       global $mysqli;
 
       //connect to server and select database
-      $mysqli = mysqli_connect("127.0.0.1", "root", "rootpw", "tshinny_newsletter");
+      $mysqli = mysqli_connect("127.0.0.1", "tshinny", "RXwqiV", "tshinny_newsletter");
 
       //if connection fails, stop script execution
       if (mysqli_connect_errno()) {
