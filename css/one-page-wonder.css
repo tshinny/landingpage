@@ -35,6 +35,11 @@ a {
     text-align: right;
 }
 
+.response {
+    margin-bottom: 12px !important;
+}
+
+
 .post-error {
   color: #a94442;
   margin-bottom: 13px;
