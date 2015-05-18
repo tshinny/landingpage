@@ -1,3 +1,10 @@
+<?php
+session_start();
+include("simple-php-captcha.php");
+$_SESSION['captcha'] = simple_php_captcha();
+header('Content-Type: text/html; charset=utf-8');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -69,7 +76,7 @@
     </header>
 
     <!-- Page Content -->
-    <div class="container">
+     <div class="container">
 
         <hr class="featurette-divider">
             <div class="row "></div>
@@ -81,12 +88,12 @@
                     <h2 class="featurette-heading">Patrick
                         <span class="text-muted">Leitgeb.</span>
                     </h2>
-                    <p class="profile-text">In 2013 Patrick attended the Summer School at London School of Economics and Political Science - a life changing expierence. Coming back to Austria filled with inspirational energy gained through open-minded diverse students from top universities all over the world, he realized his dormant desire for being more than just a team leader & product manager within leading companies in various industries over the past eight years. After graduating with his Master's degree in IT management he started to focus even more on lifelong learning by successfully completing executive education programs at Europe's top business schools in Dublin and Rotterdam.</p>
+                    <p class="profile-text">In 2013 Patrick attended the Summer School at London School of Economics and Political Science - a life changing experience. Coming back to Austria filled with inspirational energy gained through open-minded diverse students from top universities all over the world, he realized his dormant desire for being more than just a team leader & product manager within leading companies in various industries over the past eight years. After graduating with his Master's degree in IT management he started to focus even more on lifelong learning by successfully completing executive education programs at Europe's top business schools in Dublin and Rotterdam.</p>
                     <p class="profile-text">Today, Patrick is living his passion by devoting his entrepreneurial spirit and distinctive empathetic sense to solve daily life problems with smart use of technology resulting in smiling faces.</p>
                 </div>
                 <div class="col-md-4 column">
                     <div class="profile-pic">
-                                <img class="featurette-image text-center img-rounded img-responsive" src="img/team.png">
+                                <img class="featurette-image text-center img-rounded img-responsive" src="img/team.png"  height="548" width="628">
                     </div>
                 </div>
                 <div class="col-md-4 column">
@@ -95,7 +102,7 @@
                     </h2>
                     <p class="profile-text">His path to entrepreneurship is one that does not fulfill the typical cliche. Instead of aborting his study, he finished two of them in the fields of business informatics and technical management, complemented by Summer School experiences such as in the Peking Universtiy in 2014. He does not even have a garage used as office or assembly plant, but loves to work and create value with inspired minds around. Along the way, Günther soaked up a variety of exciting impressions in the last eight years of his professional career - from collaborating in an e-marketing department of a huge pharmaceutical company, to activities as freelancer for several start-ups, right up to delivering projects to companies in diverse industries on his own. 
                     </p>
-                    <p class="profile-text">Günther's concluding lession is that with an open mind and the right approach, every problem has the potential to make people happy.</p>
+                    <p class="profile-text">Günther's concluding lesson is that with an open mind and the right approach, every problem has the potential to make people happy.</p>
                 </div>
             </div>
         </div>
@@ -114,48 +121,48 @@
         <hr class="featurette-divider">
 
         <!-- Third Featurette -->
-                    <div class="row"></div>
-
         <div class="featurette" id="contact" style="text-align:center">
             <div class="row clearfix">    
-
+             
                 <div class="col-md-1 column">
                 </div>
                 
-                <div class="col-md-6 col-xs-12 column">
+                <div class="col-md-6 col-xs-12  column">
                     <h2 class="featurette-heading" style="text-align:right">Let's get 
                         <span class="text-muted">in touch.</span>
                     </h2>  
                     <div class="row top-buffer"></div>
-                        <!-- Begin MailChimp Signup Form-->
-                    <div class="contact-container pull-right">
+                    <div id="form" >
+                        <form role="form" method="POST" class="contact" id="form" >
+                            <div class="col-md-7 column pull-right">
 
-                        <form role="form" action="//tshinny.us10.list-manage.com/subscribe/post?u=f8782c91f8c1295341793d3af&amp;id=f73efc1f02" method="POST" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="contact validate" target="_blank" novalidate>
-
-                                <div class="form-group mc-field-group">
-                                    <input type="email" value="" name="EMAIL" class="form-control required email" placeholder="Email address" id="mce-EMAIL" width="50" >
+                                <div class="form-group ">
+                                    <input type="input" class="form-control" placeholder="Enter full name" id="fullName" name="fullName" data-validation="required"/>
                                 </div>
-                                <div class="form-group mc-field-group">
-                                    <input type="input" value="" name="FNAME" class="form-control required " placeholder="First name" id="mce-FNAME">
-                                </div>
-                                <div class="form-group mc-field-group">
-                                    <input type="input" value="" name="LNAME" class="form-control required " placeholder="Last name" id="mce-LNAME">
-                                </div>
-                                <div id="mce-responses" class="clear">
-                                    <div class="response" id="mce-error-response" style="display:none"></div>
-                                    <div class="response" id="mce-success-response" style="display:none"></div>
-                                </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                <div style="position: absolute; left: -5000px;"><input type="text" name="b_f8782c91f8c1295341793d3af_f73efc1f02" tabindex="-1" value=""></div>
                                 <div class="form-group">
-                                    <input type="submit" value="Keep me posted" name="subscribe" id="mc-embedded-subscribe" class="btn btn-default">
+                                     <input type="email" placeholder="Enter email" class="form-control" id="email" name="email" data-validation="email">
                                 </div>
+                                <div class="form-group">
+                                     <input type="input" placeholder="Enter captcha" class="form-control" id="captcha" name="captcha" data-validation="required" />
 
-                        </form> 
+                                </div>                                  
+                                 <div class="form-group text-right">
+                                    <?php echo '<img src="' . $_SESSION['captcha']['image_src'] . '" alt="CAPTCHA" id="captcha-img"  height="75" width="160" />'; ?>
+                                    <div><small>Click to change captcha</small></div>
+                                </div>
+                                <div class="row post-error"></div>                               
+                                 <div class="form-group">
+                                    <div class="form-group pull-right">
+
+                                        <button type="button" class="btn btn-default" id="submit">Keep me posted</button>
+                                    </div>
+                               </div>
+                            </div>
+                           
+                        </form>
                     </div>
-
-                        <!--End mc_embed_signup-->
                 </div>
-                <div class="col-md-4 col-xs-12  column">
+                <div class="col-md-4  col-xs-12  column">
                     <p class="lead text-left text-muted">
                         <blockquote>
                             <p>
@@ -199,23 +206,65 @@
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.1/jquery.form-validator.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.1/jquery.form-validator.min.js"></script>
 
-                        <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>    
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ <script type="text/javascript">
+  
+  $.validate();
 
-  ga('create', 'UA-63115003-1', 'auto');
-  ga('send', 'pageview');
+     $(document).ready(function () {
 
-</script>                        
+        $("#captcha-img").click(function(){
+            $.ajax({
+                type: "GET",
+                url: "reload_captcha.php", //process to mail
+                success: function(msg){
+                   $("#captcha-img").attr('src',(msg));
+                }
+            });
+        });
+
+        $("#submit").on('click',function(){
+            $("form.contact").submit();
+        });
+
+        $(document).on('submit','form.contact',function(){
+            $.ajax({
+                type: "POST",
+                url: "newsletter.php", //process to mail
+                data: $('form.contact').serialize(),
+                success: function(msg){
+                    var obj = jQuery.parseJSON( msg );
+                    if(obj.msg!=null)
+                        $("#form").html("<p class='lead text-right'>"+obj.msg+"</p>"); 
+                    else
+                        $(".post-error").html(obj.err); 
+
+                },
+                error: function(msg){
+                    $(".error").html(msg); //hide button and show thank you
+                }
+            });
+        });
+    });
+    </script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-63115003-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>        
+
 </body>
+
 </html>
