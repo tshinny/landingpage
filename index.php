@@ -137,7 +137,10 @@ header('Content-Type: text/html; charset=utf-8');
                             <div class="col-md-7 column pull-right">
 
                                 <div class="form-group ">
-                                    <input type="input" class="form-control" placeholder="Enter full name" id="fullName" name="fullName" data-validation="required"/>
+                                    <input type="input" class="form-control" placeholder="Enter first name" id="firstName" name="firstName" data-validation="required"/>
+                                </div>
+                                <div class="form-group ">
+                                    <input type="input" class="form-control" placeholder="Enter last name" id="lastName" name="lastName" data-validation="required"/>
                                 </div>
                                 <div class="form-group">
                                      <input type="email" placeholder="Enter email" class="form-control" id="email" name="email" data-validation="email">
