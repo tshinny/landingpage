@@ -134,7 +134,7 @@ header('Content-Type: text/html; charset=utf-8');
                     <div class="row top-buffer"></div>
                     <div id="form" >
                         <form role="form" method="POST" class="contact" id="form" >
-                            <div class="col-md-7 column pull-right">
+                            <div class="col-md-7 col-xs-10 column pull-right">
 
                                 <div class="form-group ">
                                     <input type="input" class="form-control" placeholder="Enter first name" id="firstName" name="firstName" data-validation="required"/>
