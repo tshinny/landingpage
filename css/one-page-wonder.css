@@ -22,6 +22,13 @@ a {
     text-decoration: none !important;
 }
 
+.profile-text {
+    font-size: 14px;
+}
+
+.profile-pic {
+    margin: 70px 0 70px 0;
+}
 
 .contact-container {
     width: 60%;
@@ -61,23 +68,23 @@ blockquote {
 }
 
 .headline {
-    padding: 120px 0;
+    padding: 110px 0;
 }
 
 .headline h1 {
-    font-size: 120px;
+    font-size: 110px;
     background: #fff;
     background: rgba(255,255,255,0.9);
 }
 
 .headline h2 {
-    font-size: 77px;
+    font-size: 45px;
     background: #fff;
     background: rgba(255,255,255,0.9);
 }
 
 .featurette-divider {
-    margin: 80px 0;
+    margin: 40px  0 40px 0;
 }
 
 .featurette {
@@ -102,11 +109,11 @@ footer {
 
 @media(max-width:1200px) {
     .headline h1 {
-        font-size: 140px;
+        font-size: 110px;
     }
 
     .headline h2 {
-        font-size: 63px;
+        font-size: 35px;
     }
 
     .featurette-divider {
@@ -128,11 +135,11 @@ footer {
 
 @media(max-width:991px) {
     .headline h1 {
-        font-size: 105px;
+        font-size: 100px;
     }
 
     .headline h2 {
-        font-size: 50px;
+        font-size: 28px;
     }
 
     .featurette-divider {
@@ -172,11 +179,11 @@ footer {
 
 @media(max-width:668px) {
     .headline h1 {
-        font-size: 70px;
+        font-size: 60px;
     }
 
     .headline h2 {
-        font-size: 32px;
+        font-size: 22px;
     }
 
     .featurette-divider {
@@ -190,11 +197,11 @@ footer {
     }
 
     .headline h1 {
-        font-size: 60px;
+        font-size: 50px;
     }
 
     .headline h2 {
-        font-size: 30px;
+        font-size: 20px;
     }
 }
 
