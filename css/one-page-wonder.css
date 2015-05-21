@@ -22,6 +22,30 @@ a {
     text-decoration: none !important;
 }
 
+a.imprint:link {
+    color: #333;
+    text-decoration: none;
+    text-underline: none;
+}
+
+a.imprint:active {
+    color: #333;
+    text-decoration: none;
+    text-underline: none;
+}
+
+a.imprint:visited {
+    color: #333;
+    text-decoration: none;
+    text-underline: none;
+}
+
+a.imprint:hover {
+    color: #333;
+    text-decoration: none;
+    text-underline: none;
+}
+
 .profile-text {
     font-size: 14px;
 }
